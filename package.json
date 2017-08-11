@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha tests/*.js",
+    "test": "mocha tests/*.js --timeout 30000",
     "test-c": "nodemon --exec 'npm run test'"
   },
   "author": "John Huang <little78926@gmail.com>",

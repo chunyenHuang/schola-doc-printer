@@ -1,4 +1,5 @@
-const { datasToRows } = require('../helpers');
+const { datasToRows } = require('./helpers');
+const styles = require('./styles');
 exports.generate = function(
     input = {
         datas: [],
@@ -17,30 +18,7 @@ exports.generate = function(
     const htmlStream = `
     <html>
     <head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <style>
-        html,
-        body {
-            margin: 5px;
-        }
-        table {
-            margin: auto;
-            width: 100%;
-        }
-        .row-no-padding {
-            [class*="col-"] {
-                padding-left: 0 !important;
-                padding-right: 0 !important;
-                margin: 0px !important;                
-            }
-        }         
-        h3 {
-            margin: 2px !important;                
-        } 
-        h5 {
-            margin: 2px !important;                
-        }
-    </style>
+    ${styles.default}    
     </head>
     <body>
         <div class="container">

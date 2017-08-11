@@ -1,18 +1,9 @@
-const { datasToRows } = require('./helpers');
 const styles = require('./styles');
 exports.generate = function(
     input = {
-        datas: [],
-        headers: [{ key: '', width: 10 }]
+        enrollments: []
     }, options = {}
 ) {
-    const {
-        theClass,
-        teacher,
-        datas,
-        headers
-    } = input;
-    const rowDatas = datasToRows(datas, headers);
     const htmlStream = `
     <html>
     <head>
