@@ -14,7 +14,7 @@ function print(output = './output.pdf', template = '', input = {}, options = { f
                 // first: 'Cover page',
                 default: `
                 <div style="text-align: center;">
-                    <span>${options.footer}</span><span style="color: #444;">{{page}}</span>/<span>{{pages}}</span>                    
+                    <span>${options.footer}</span>&nbsp;&nbsp;<span style="color: #444;">{{page}}</span>&nbsp;/&nbsp;<span>{{pages}}</span>                    
                 </div>
                 `,
                 // last: 'Last Page'
