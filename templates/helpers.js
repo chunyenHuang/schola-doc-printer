@@ -1,13 +1,18 @@
-exports.datasToRows = function datasToRows(datas = [], headers = [{ key: '', width: 10 }]) {
+exports.datasToRows = function datasToRows(datas = [], headers = [{ key: '' }]) {
     let header = [];
     let rows = [];
     let keys = [];
     headers.forEach((item) => {
-        const label = item.label || item.key.toUpperCase();
-        const classNames = [];
-        classNames.push(`text-center`);
-        header.push(`<th class="${classNames.join(' ')}" style="width:${item.width}%;"><span>${label}</span></th>`);
-        keys.push(item.key);
+        if (!Array.isArray(item)) {
+            const label = item.label || item.key.toUpperCase();
+            const classNames = [];
+            classNames.push(`text-center`);
+            const width = (item.width) ? `width: ${item.width}%;` : '';
+            header.push(`<th class="${classNames.join(' ')}" style="${width}"><span>${label}</span></th>`);
+            keys.push(item.key);
+        } else {
+            // support for sub td?
+        }
     });
     header = `<tr>${header.join('')}</tr>`;
 

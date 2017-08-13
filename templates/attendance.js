@@ -23,24 +23,25 @@ exports.generate = function(
     <body>
         <div class="container">
             <div class="row row-no-padding">
-                <div class="col-xs-8 col-xs-offset-2 text-center no-padding">
-                    <h3>${title}</h3>
+                <div class="col-xs-12 text-center no-padding">
+                    <h5>${title}</h5>
                 </div>
             </div>
             <div class="row row-no-padding">
-                <div class="col-xs-8 col-xs-offset-2 text-center no-padding">
-                    <h3>${subTitle}</h3>
+                <div class="col-xs-12 text-center no-padding">
+                    <h5>${subTitle}</h5>
                 </div>
             </div>
             <div class="row row-no-padding">
-                <div class="col-xs-4 col-xs-offset-2 text-center no-padding">
-                    <h3>${theClass}</h3>
+                <div class="col-xs-6 text-center no-padding">
+                    <h5>${theClass}</h5>
                 </div>
-                <div class="col-xs-4 text-center no-padding">
-                    <h3>${teacher}</h3>
+                <div class="col-xs-6 text-center no-padding">
+                    <h5>${teacher}</h5>
                 </div>
             </div>
         </div>
+        <br/>
         <table class="table-bordered">
             <thead>
                 ${rowDatas.header}

@@ -14,7 +14,8 @@ exports.default = `
         width: 100%
     }
     th, td {
-        font-size: 10px;            
+        font-size: 10px;    
+        padding: 2px 0px 2px 0px;        
     }
     .row-no-padding {
         [class*="col-"] {
