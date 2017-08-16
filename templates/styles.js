@@ -17,6 +17,10 @@ exports.default = `
         font-size: 10px;    
         padding: 2px 0px 2px 0px;        
     }
+    .table-bordered,.table-bordered th, .table-bordered td {
+        border: 1px solid #222222 !important;
+    }
+    
     .row-no-padding {
         [class*="col-"] {
             padding-left: 0 !important;
