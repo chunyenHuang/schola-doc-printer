@@ -13,9 +13,9 @@ describe('print', () => {
                     class_LIID: {
                             label: '1A'
                         },
-                        location: {
-                            classroom: 'B15'
-                        },
+                        location: [{
+                            classroom: null
+                        }],
                         teachers: [{
                             person: {
                                 chineseName: '唔中先'

@@ -107,9 +107,9 @@ function card(student, logo) {
             class_LIID: {
                     label: ' '
                 },
-                location: {
+                location: [{
                     classroom: '  '
-                },
+                }],
                 teachers: [{
                     person: { chineseName: '  ' }
                 }]
@@ -120,6 +120,8 @@ function card(student, logo) {
         return names;
     }, '');
     const chinesePhoneticNotation = (student.chinesePhoneticNotation) ? `(${student.chinesePhoneticNotation})` : '';
+    const classroom = (student.class.location[0] && student.class.location[0].classroom) ?
+        student.class.location[0].classroom : '';
     const template = `
 <div class="card-container">
     <table class="inner-table">
@@ -160,7 +162,7 @@ function card(student, logo) {
                 <span class="small">Room</span>
             </td>
             <td>
-                <span class="large">${student.class.location.classroom}</span>
+                <span class="large">${classroom}</span>
             </td>
         </tr>
     </table>
