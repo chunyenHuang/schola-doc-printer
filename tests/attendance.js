@@ -1,6 +1,7 @@
 const print = require('../index');
 const outputDir = './tests/output';
 const datas = require('./materials/attendance-datas');
+const moment = require('moment');
 describe('print', () => {
     it('attendance', () => {
         const weeks = Array(16).fill({})
@@ -15,6 +16,7 @@ describe('print', () => {
             title: '我的學校',
             subTitle: 'Attendance',
             theClass: '2017 Fall 1B',
+            theClassroom: 'B-15',
             teacher: 'Me Myself & I',
             datas: datas.map((item, index) => {
                 item.index = (index + 1).toString();
@@ -26,6 +28,7 @@ describe('print', () => {
                 if (!item.chineseName || item.chineseName == '') {
                     item.chineseName = item.firstName + ' ' + item.lastName;
                 }
+                item.birthday = moment(item.birthday).format('MM/DD/YYYY');
                 // gender
                 item.gender = (item.gender == 'male') ? 'M' : 'F';
                 return item;
@@ -40,7 +43,11 @@ describe('print', () => {
                 width: 10
             }, ...weeks, {
                 key: 'gender',
-                label: 'Gender',
+                label: ' ',
+                width: 5
+            }, {
+                key: 'birthday',
+                label: 'Birthday',
                 width: 5
             }, {
                 key: 'age',
@@ -48,7 +55,7 @@ describe('print', () => {
                 width: 5
             }, {
                 key: 'chinesePhoneticNotation',
-                label: 'Notation',
+                label: ' ',
                 width: 5
             }]
         };

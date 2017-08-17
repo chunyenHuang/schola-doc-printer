@@ -10,6 +10,7 @@ exports.generate = function(
         title,
         subTitle,
         theClass,
+        theClassroom,
         teacher,
         datas,
         headers
@@ -18,7 +19,12 @@ exports.generate = function(
     const htmlStream = `
     <html>
     <head>
-    ${styles.default}    
+        ${styles.default}    
+        <style>
+            td {
+                height: 20px;   
+            }
+        </style>
     </head>
     <body>
         <div class="container">
@@ -28,13 +34,8 @@ exports.generate = function(
                 </div>
             </div>
             <div class="row row-no-padding">
-                <div class="col-xs-12 text-center no-padding">
-                    <h5>${subTitle}</h5>
-                </div>
-            </div>
-            <div class="row row-no-padding">
                 <div class="col-xs-6 text-center no-padding">
-                    <h5>${theClass}</h5>
+                    <h5>${theClass} (${theClassroom})</h5>
                 </div>
                 <div class="col-xs-6 text-center no-padding">
                     <h5>${teacher}</h5>
@@ -44,7 +45,7 @@ exports.generate = function(
         <br/>
         <table class="table-bordered">
             <thead>
-                ${rowDatas.header}
+                ${rowDatas.header} 
             </thead>
             <tbody>
                 ${rowDatas.rows}
