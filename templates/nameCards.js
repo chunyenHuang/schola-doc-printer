@@ -111,15 +111,15 @@ function card(student, logo) {
                     classroom: '  '
                 },
                 teachers: [{
-                    chineseName: '  '
+                    person: { chineseName: '  ' }
                 }]
         }
     }
     const teachers = student.class.teachers.reduce((names, teacher) => {
-        names = names + teacher.chineseName + ' ';
+        names = names + teacher.person.chineseName + ' ';
         return names;
     }, '');
-    const chinesePhoneticNotation=(student.chinesePhoneticNotation)?`(${student.chinesePhoneticNotation})`:'';
+    const chinesePhoneticNotation = (student.chinesePhoneticNotation) ? `(${student.chinesePhoneticNotation})` : '';
     const template = `
 <div class="card-container">
     <table class="inner-table">

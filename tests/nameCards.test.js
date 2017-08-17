@@ -17,9 +17,13 @@ describe('print', () => {
                             classroom: 'B15'
                         },
                         teachers: [{
-                            chineseName: '唔中先'
+                            person: {
+                                chineseName: '唔中先'
+                            }
                         }, {
-                            chineseName: '又老細'
+                            person: {
+                                chineseName: '又老細'
+                            }
                         }]
                 }
             })
