@@ -8,8 +8,9 @@ describe('print', () => {
             .map((item, index) => {
                 return {
                     key: 'week-field',
+                    // label: '0',
                     label: (index + 1).toString(),
-                    width: 3
+                    width: 2
                 };
             });
         const submit = {
@@ -31,32 +32,40 @@ describe('print', () => {
                 item.birthday = moment(item.birthday).format('MM/DD/YYYY');
                 // gender
                 item.gender = (item.gender == 'male') ? 'M' : 'F';
+
+                //
+                item.chinesePhoneticNotation = '注';
+
+                //
+                item.otherClass = '1234567';
                 return item;
             }),
             headers: [{
                 key: 'index',
                 label: '#',
-                width: 3
+                width: 2
             }, {
                 key: 'chineseName',
                 label: 'Name',
-                width: 10
+                width: 8
             }, ...weeks, {
-                key: 'gender',
+                key: 'otherClass',
                 label: ' ',
+                fontSize: '50%',                
                 width: 5
             }, {
                 key: 'birthday',
                 label: 'Birthday',
-                width: 5
+                width: 5,
+                fontSize: '50%'
             }, {
                 key: 'age',
                 label: 'Age',
-                width: 5
+                width: 2
             }, {
                 key: 'chinesePhoneticNotation',
                 label: ' ',
-                width: 5
+                width: 3
             }]
         };
         return print(`${outputDir}/attendance.pdf`, 'attendance', submit)

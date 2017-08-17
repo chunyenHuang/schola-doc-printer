@@ -15,8 +15,10 @@ exports.default = `
     }
     th, td {
         font-size: 10px;    
-        padding: 2px 0px 2px 0px;        
+        padding: 1px 1px 1px 1px;       
+        margin: 0;        
     }
+    
     .table-bordered,.table-bordered th, .table-bordered td {
         border: 1px solid #222222 !important;
     }
