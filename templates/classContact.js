@@ -8,6 +8,7 @@ exports.generate = function(
 ) {
     const {
         theClass,
+        theClassroom,
         teacher,
         datas,
         headers
@@ -22,7 +23,7 @@ exports.generate = function(
         <div class="container">
             <div class="row row-no-padding">
                 <div class="col-xs-4 col-xs-offset-2 text-center no-padding">
-                    <h5>${theClass}</h5>
+                    <h5>${theClass} (${theClassroom})</h5>
                 </div>
                 <div class="col-xs-4 text-center no-padding">
                     <h5>${teacher}</h5>
