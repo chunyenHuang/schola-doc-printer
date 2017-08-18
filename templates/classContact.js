@@ -21,7 +21,8 @@ exports.generate = function(
     </head>
     <body>
         <div class="container">
-            <div class="row row-no-padding">
+            <div class="row">
+                <br/>
                 <div class="col-xs-4 col-xs-offset-2 text-center no-padding">
                     <h5>${theClass} (${theClassroom})</h5>
                 </div>

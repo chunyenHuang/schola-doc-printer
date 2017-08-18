@@ -35,7 +35,7 @@ exports.generate = function(
             }
             table {
                 width: 100%;
-                min-height: 100%;
+                height: 100%;
             }
             td.bordered {
                 border: 1px solid #222222 !important;
@@ -60,6 +60,7 @@ exports.generate = function(
             }
             div.card-container {
                 position: relative
+                margin: 0px
             }
             div.logo{
                 position: absolute;

@@ -4,7 +4,18 @@ const templates = require('./templates');
 // const html = fs.readFileSync('./test.html', 'utf8');
 // const options = { format: 'Letter', fontSize: 8 };
 
-function print(output = './output.pdf', template = '', input = {}, options = { format: 'Letter', footer: ' ', noFooter: false }) {
+function print(output = './output.pdf', template = '', input = {}, options = {
+    border: 0,
+    // format: 'Letter',
+    height: '11in',
+    width: '8.5in', 
+    footer: ' ',
+    noFooter: false
+}) {
+    if(options.orientation =='landscape'){
+        options.height = '8.5in',
+        options.width = '11in'
+    }
     return new Promise((resolve, reject) => {
         template = (templates[template]) ? templates[template] : templates['basic'];
         const htmlStream = template.generate(input, options);
