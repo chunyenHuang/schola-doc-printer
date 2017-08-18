@@ -59,8 +59,7 @@ exports.generate = function(
                 text-align: center;
             }
             div.card-container {
-                position: relative
-                margin: 0px
+                position: relative;
             }
             div.logo{
                 position: absolute;
