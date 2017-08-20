@@ -53,7 +53,6 @@ exports.generate = function(
             }
             table.inner-table {
                 margin: 0;
-                background-color: grey;       
                 width: 100%;
                 height: 100%;
             }
@@ -66,7 +65,6 @@ exports.generate = function(
             }
             div.card-container {
                 position: relative;
-                background-color: red;    
                 height: 100%;
                 width: 100%;  
                 margin: 0px;
@@ -138,9 +136,9 @@ function card(student, logo) {
 
     const textMaxWidth = 200; // px
     const scale = 1.8;
-    const fitText = (text='') => {
-        const totals = text.length;
-        const alphabets = text.match(/[\ a-zA-Z]/g).length;
+    const fitText = (text = '') => {
+        const totals = (text || '').length;
+        const alphabets = ((text || '').match(/[\ a-zA-Z]/g) || '').length;
         const nonAlphabets = totals - alphabets;
         // console.log((alphabets + nonAlphabets * 2), (textMaxWidth / (alphabets + nonAlphabets * 2)))
         return `<span style="font-size: ${scale*(textMaxWidth / (alphabets + nonAlphabets*2))}px">${text}</span>`;

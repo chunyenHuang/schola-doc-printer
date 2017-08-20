@@ -32,6 +32,11 @@ describe('print', () => {
                     item.chineseName = 'Adolphe Roche';
                     item.class.teachers[0].person.chineseName = 'Vincent Luc Michel Jules';
                 }
+                if (index % 5 == 0) {
+                    item.chineseName = null;
+                    item.class.teachers[0].person.chineseName = null;
+                }
+
                 return item;
             })
         };
