@@ -33,14 +33,14 @@ exports.generate = function(
                 margin: 0;
                 padding: 0;
             }
-            table {
+            table.table-bordered {
                 width: 100%;
                 height: 100%;
             }
             td.bordered {
                 border: 1px solid #222222 !important;
-                padding: 2px;       
-                margin: 0;     
+                padding: 0px;       
+                margin: 0px;     
             }
             span.large {
                 font-size: 1.8em;
@@ -51,8 +51,14 @@ exports.generate = function(
             span.small {
                 font-size: 0.6em;
             }
+            table.inner-table {
+                margin: 0;
+                background-color: grey;       
+                width: 100%;
+                height: 100%;
+            }
             table.inner-table td {
-                padding: 0px 0px 5px 0px;
+                padding: 0px;
             }
             table.inner-table td.left {
                 width: 25%;
@@ -60,12 +66,19 @@ exports.generate = function(
             }
             div.card-container {
                 position: relative;
+                background-color: red;    
+                height: 100%;
+                width: 100%;  
+                margin: 0px;
+                padding: 0px;
+                max-width: 264px;
+                max-height: 204px; 
             }
             div.logo{
                 position: absolute;
                 z-index: 200; 
                 right: 10px;
-                bottom: -5px;
+                bottom: 5px;
             }
         </style>
     </head>
@@ -84,9 +97,9 @@ function cardPage(students, logo) {
 
     students.forEach((student, index) => {
         if (index % 3 == 0) {
-            trs = trs + '<tr>'
+            trs = trs + '<tr class="cards-row">'
         }
-        trs = trs + `<td class="bordered" width="33%">${card(student, logo)}</td>`
+        trs = trs + `<td class="bordered" valign="top" width="33%">${card(student, logo)}</td>`
         if (index % 3 == 2) {
             trs = trs + '</tr>'
         }
@@ -122,6 +135,16 @@ function card(student, logo) {
     const chinesePhoneticNotation = (student.chinesePhoneticNotation) ? `(${student.chinesePhoneticNotation})` : '';
     const classroom = (student.class.location[0] && student.class.location[0].classroom) ?
         student.class.location[0].classroom : '';
+
+    const textMaxWidth = 200; // px
+    const scale = 1.8;
+    const fitText = (text) => {
+        const totals = text.length;
+        const alphabets = text.match(/[\ a-zA-Z]/g).length;
+        const nonAlphabets = totals - alphabets;
+        // console.log((alphabets + nonAlphabets * 2), (textMaxWidth / (alphabets + nonAlphabets * 2)))
+        return `<span style="font-size: ${scale*(textMaxWidth / (alphabets + nonAlphabets*2))}px">${text}</span>`;
+    }
     const template = `
 <div class="card-container">
     <table class="inner-table">
@@ -132,7 +155,7 @@ function card(student, logo) {
                 <span class="small">Student</span>
             </td>
             <td>
-                <span class="large">${student.chineseName}</span>
+                <span class="large">${fitText(student.chineseName)}</span>
             </td>
         </tr>
         <tr>
@@ -152,7 +175,7 @@ function card(student, logo) {
                 <span class="small">Teacher</span>
             </td>
             <td>
-                <span class="large">${teachers}</span> 
+                <span class="large">${fitText(teachers)}</span> 
             </td>
         </tr>
         <tr>
