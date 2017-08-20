@@ -138,7 +138,7 @@ function card(student, logo) {
 
     const textMaxWidth = 200; // px
     const scale = 1.8;
-    const fitText = (text) => {
+    const fitText = (text='') => {
         const totals = text.length;
         const alphabets = text.match(/[\ a-zA-Z]/g).length;
         const nonAlphabets = totals - alphabets;
