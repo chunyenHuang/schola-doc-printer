@@ -32,8 +32,20 @@ describe('print', () => {
                     item.chineseName = 'Adolphe Roche';
                     item.class.teachers[0].person.chineseName = 'Vincent Luc Michel Jules';
                 }
-                if (index % 5 == 0) {
-                    item.chineseName = null;
+                if (index % 5 == 1) {
+                    item.chineseName = 'Vincent Luc Michel Jules';
+                    item.class.teachers[0].person.chineseName = null;
+                }
+                if (index % 5 == 2) {
+                    item.chineseName = '一';
+                    item.class.teachers[0].person.chineseName = null;
+                }
+                if (index % 5 == 3) {
+                    item.chineseName = '一二';
+                    item.class.teachers[0].person.chineseName = null;
+                }
+                if (index % 5 == 4) {
+                    item.chineseName = '一二三';
                     item.class.teachers[0].person.chineseName = null;
                 }
 

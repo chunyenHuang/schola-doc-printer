@@ -127,21 +127,25 @@ function card(student, logo) {
         }
     }
     const teachers = student.class.teachers.reduce((names, teacher) => {
-        names = names + teacher.person.chineseName + ' ';
+        names = names + (teacher.person.chineseName || '') + ' ';
         return names;
     }, '');
-    const chinesePhoneticNotation = (student.chinesePhoneticNotation) ? `(${student.chinesePhoneticNotation})` : '';
+    const chinesePhoneticNotation = (student.chinesePhoneticNotation) ? ` (${student.chinesePhoneticNotation})` : '';
     const classroom = (student.class.location[0] && student.class.location[0].classroom) ?
         student.class.location[0].classroom : '';
 
-    const textMaxWidth = 200; // px
-    const scale = 1.8;
-    const fitText = (text = '') => {
+    const textMaxWidth = 220; // px
+    const scale = 1.9;
+    const fitText = (text) => {
+        text = text || '';
+        const maxFontSize = 30;
         const totals = (text || '').length;
         const alphabets = ((text || '').match(/[\ a-zA-Z]/g) || '').length;
         const nonAlphabets = totals - alphabets;
+        let fontSize = scale * (textMaxWidth / (alphabets + nonAlphabets * 2));
+        fontSize = (fontSize <= maxFontSize) ? fontSize : maxFontSize;
         // console.log((alphabets + nonAlphabets * 2), (textMaxWidth / (alphabets + nonAlphabets * 2)))
-        return `<span style="font-size: ${scale*(textMaxWidth / (alphabets + nonAlphabets*2))}px">${text}</span>`;
+        return `<span style="font-size: ${fontSize}px">${text}</span>`;
     }
     const template = `
 <div class="card-container">
@@ -153,7 +157,7 @@ function card(student, logo) {
                 <span class="small">Student</span>
             </td>
             <td>
-                <span class="large">${fitText(student.chineseName)}</span>
+                <span class="large">${fitText((student.chineseName))}</span>
             </td>
         </tr>
         <tr>
@@ -163,7 +167,7 @@ function card(student, logo) {
                 <span class="small">Class</span>
             </td>
             <td>
-                <span class="large">${student.class.class_LIID.label} ${chinesePhoneticNotation}</span>
+                <span class="large">${fitText(student.class.class_LIID.label + chinesePhoneticNotation)}</span>
             </td>
         </tr>
         <tr>
