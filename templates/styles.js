@@ -1,11 +1,13 @@
 exports.default = `
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 <style>
     html,
     body {
         margin: 5;
         padding: 0;
         font-size: 7px;
+        font-family: 'Roboto',Helvetica,Arial, sans-serif;
         background: rgb(241,241,241);
         -webkit-print-color-adjust: exact;
         box-sizing: border-box;

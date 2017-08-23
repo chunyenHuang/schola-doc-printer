@@ -37,7 +37,7 @@ describe('print', () => {
                     item.class.teachers[0].person.chineseName = null;
                 }
                 if (index % 5 == 2) {
-                    item.chineseName = '一';
+                    item.chineseName = 'Maximus Lee';
                     item.class.teachers[0].person.chineseName = null;
                 }
                 if (index % 5 == 3) {

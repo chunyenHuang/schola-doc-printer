@@ -27,11 +27,13 @@ exports.generate = function(
     const htmlStream = `
     <html>
     <head>
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
         <style>
             html,
             body {
                 margin: 0;
                 padding: 0;
+                font-family: 'Roboto',Helvetica,Arial, sans-serif;                
             }
             table.table-bordered {
                 width: 100%;
@@ -134,7 +136,7 @@ function card(student, logo) {
     const classroom = (student.class.location[0] && student.class.location[0].classroom) ?
         student.class.location[0].classroom : '';
 
-    const textMaxWidth = 200; // px
+    const textMaxWidth = 190; // px
     const scale = 1.8;
     const fitText = (text) => {
         text = text || '';
