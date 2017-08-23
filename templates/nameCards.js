@@ -134,8 +134,8 @@ function card(student, logo) {
     const classroom = (student.class.location[0] && student.class.location[0].classroom) ?
         student.class.location[0].classroom : '';
 
-    const textMaxWidth = 220; // px
-    const scale = 1.9;
+    const textMaxWidth = 200; // px
+    const scale = 1.8;
     const fitText = (text) => {
         text = text || '';
         const maxFontSize = 30;
