@@ -1,13 +1,21 @@
 {
   "name": "schola-doc-printer",
   "version": "1.0.19",
-  "description": "",
+  "description": "A document printer with templates for Schola. ",
   "main": "index.js",
   "scripts": {
     "test": "mocha tests/*.js --timeout 30000",
     "test-c": "nodemon --exec 'npm run test'"
   },
   "author": "John Huang <little78926@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chunyenHuang/schola-doc-printer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/chunyenHuang/schola-doc-printer/issues"
+  },
+  "homepage": "https://github.com/chunyenHuang/schola-doc-printer",
   "license": "MIT",
   "dependencies": {
     "html-pdf": "^2.1.0"

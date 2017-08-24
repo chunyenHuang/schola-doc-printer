@@ -1,7 +1,8 @@
 # Schola Document Printer
+
 [![Build Status](https://travis-ci.org/chunyenHuang/schola-doc-printer.svg?branch=master)](https://travis-ci.org/chunyenHuang/schola-doc-printer)
 
- - [schola](https://github.com/chunyenHuang/schola)
+This is a document printer for [schola](https://github.com/chunyenHuang/schola). It provieds various templates.
 
 ## TEST
 
