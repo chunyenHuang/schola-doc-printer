@@ -1,6 +1,6 @@
 {
   "name": "schola-doc-printer",
-  "version": "1.0.20",
+  "version": "1.0.21",
   "description": "A document printer with templates for Schola. ",
   "main": "index.js",
   "scripts": {
